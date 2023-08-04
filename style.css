@@ -4,10 +4,10 @@
 }
 
 
-* {
+/* * {
     margin: 0;
     padding: 0;
-}
+} */
 
 body {
     height: 100%;
@@ -36,11 +36,12 @@ u {
     /* height: 80px; */
     z-index: 3;
     position: fixed;
-    left: 0;
     top: 0;
     width: 100%;
     transition: transform .1s linear;
 }
+
+/* left: 0; */
 
 .menu.hide {
     transform: translateY(-80px);
@@ -76,6 +77,10 @@ u {
     align-items: center;
 }
 
+.menu__list-items {
+    padding: 4px 16px 6px 16px;
+}
+
 .menu__list {
     list-style: none;
     display: flex;
@@ -87,7 +92,6 @@ u {
 
 .menu__list-link {
     color: var(--text, #030303);
-
     font-family: Namu;
     font-size: 18px;
     font-style: normal;
@@ -103,27 +107,46 @@ u {
 
 .menu__list-link:hover {
     color: #8B0303;
-    border-bottom: 2px solid #8B0303;
+    border-bottom: 3px solid #8B0303;
 }
 
 .menu__list-search-wrapper {
-    border-radius: 15px;
+    border-radius: 61px;
     border: none;
     background: var(--backgraund, #F2F2F0);
     margin-right: 8px;
-    padding: 8px 12px 8px 24px;
+    padding: 6px 12px 6px 24px;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     display: flex;
+    width: 328px;
 }
 
 .menu__list-search {
     border-style: none;
     background-color: #F2F2F0;
+    outline: none;
+    color: var(--text, #030303);
+    width: 100%;
+    font-family: Namu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+    /* opacity: 0.58; */
+    height: auto;
+}
+
+::placeholder {
+    opacity: 0.58;
 }
 
 .menu__list-search:focus {
     border-style: none;
+}
+
+.wrapper__switch {
+    margin-left: 35px;
 }
 
 .switch {
@@ -196,22 +219,34 @@ input:checked+.slider:before {
     min-height: 100%;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* АААААААААААААААААААААААААААААААААА одна единственная строка выше решила мою проблему */
+}
+
 .wrapper__above_cards {
     display: flex;
     flex-direction: row;
     margin-right: 25px;
     justify-content: center;
+    margin: 0px;
 }
 
 .wrapper__above_cards-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-right: 208px;
 }
 
 .wrapper__above_cards-right {
-    height: 187px;
-    width: 187px;
+    width: 267px;
+    height: 267px;
+    margin-top: 74px;
 }
 
 .roll_for_initiative {
@@ -222,15 +257,15 @@ input:checked+.slider:before {
     font-family: Colus;
     font-size: 88px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     line-height: normal;
 
     margin-bottom: 70px;
-    margin-right: 208px;
 }
 
 
 .button_generator {
+    width: auto;
     display: inline-flex;
     padding: 10px 59px 8px 59px;
     justify-content: center;
@@ -253,30 +288,36 @@ input:checked+.slider:before {
     background-color: #8B0303;
 }
 
+.wrapper__cards-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .wrapper__cards {
     display: grid;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 128px;
-    row-gap: 20px;
-    column-gap: 20px;
+    grid-template-rows: 128px 128px;
+    gap: 20px;
     margin-top: 131px;
-
 }
 
 .wrapper_cards-item {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     border-radius: 20px;
     border: 3px solid var(--primary, #8B0303);
     background-color: #FFFFFF;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: stretch;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     transition: background-color 0.4s, color 0.4s;
     max-width: 212px;
+    /* height: auto; */
 }
 
 .colortext {
@@ -287,8 +328,14 @@ input:checked+.slider:before {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    padding: 0px 24px 8px 24px;
+    display: flex;
+    width: 206px;
+    height: 56px;
+    padding: 4px 24px 8px 24px;
     justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .wrapper_cards-item-circle {
