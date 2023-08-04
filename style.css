@@ -13,7 +13,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: #fff;
-    /* padding-top: 80px; */
+    padding-top: 80px;
 }
 
 a {
@@ -24,16 +24,6 @@ u {
     color: #F2F2F0;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-/* .sticky+.content {
-     padding: 60px; 
-} */
-
 /*                                                     NAVBAR */
 .menu {
     margin-bottom: 70px;
@@ -43,6 +33,17 @@ u {
     align-items: center;
     overflow: hidden;
     background-color: #FFF;
+    /* height: 80px; */
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: transform .1s linear;
+}
+
+.menu.hide {
+    transform: translateY(-80px);
 }
 
 .menu__list-logo {
@@ -261,6 +262,7 @@ input:checked+.slider:before {
     row-gap: 20px;
     column-gap: 20px;
     margin-top: 131px;
+
 }
 
 .wrapper_cards-item {
@@ -323,10 +325,11 @@ input:checked+.slider:before {
 
 .menu_news {
     display: flex;
-    justify-content: left;
-    align-items: center;
     flex-direction: row;
+    justify-content: center;
+    align-self: center;
     margin-bottom: 80px;
+    margin-left: 274px;
 }
 
 
@@ -342,7 +345,6 @@ input:checked+.slider:before {
 .wrapper__news-item {
     margin-right: 34px;
     justify-content: left;
-
     transition: linear 0.3s;
 }
 
@@ -393,6 +395,8 @@ input:checked+.slider:before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-left: 274px;
+    margin-right: 274px;
 }
 
 .wrapper__news-item .wrapper__news-item-img {
@@ -462,10 +466,7 @@ input:checked+.slider:before {
 }
 
 .wrapper__announse-block-preview {
-    /* position: relative; */
-    /* max-width: 676px; */
-    /* sdadsdasd */
-    background-image: url(img/Announse1.png);
+    position: relative;
     background-size: 750px 420px;
     background-position: center;
     background-repeat: no-repeat;
@@ -475,6 +476,16 @@ input:checked+.slider:before {
     background-attachment: scroll;
     transition: all 0.6s ease-out;
     cursor: pointer;
+}
+
+.wrapper__announse-block #Announse1 {
+    background-image: url(img/Announse1.png);
+    /* background-size: 750px 420px; */
+}
+
+.wrapper__announse-block #Announse2 {
+    background-image: url(img/Announse2.png);
+    /* background-size: 750px 420px; */
 }
 
 .wrapper__announse-block-preview:hover {
