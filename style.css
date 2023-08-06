@@ -4,19 +4,19 @@
 }
 
 :root {
-    --text: #030303;
-    --background: #F2F2F0;
     --primary: #8B0303;
     --secondary: #A8BFF8;
+    --text: #030303;
+    --background: #fffffc;
     --accent: #6C3BF9;
     --white: #fffffc;
 }
 
 .dark-mode {
-    --text: #fffffc;
-    --background: #1A0C43;
     --primary: #8B0303;
     --secondary: #383ED082;
+    --text: #fffffc;
+    --background: #1A0C43;
     --accent: #8F6BFA;
     --white: #050505;
 }
@@ -213,7 +213,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--background);
+    background-color: var(--accent);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -232,11 +232,11 @@ h3 {
 }
 
 input:checked+.slider {
-    background-color: var(--accent);
+    background-color: var(--background);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px var(--accent);
+    box-shadow: 0 0 1px var(--background);
 }
 
 input:checked+.slider:before {
