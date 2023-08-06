@@ -17,3 +17,28 @@ window.addEventListener('scroll', () => {
 
     lastScroll = scrollPosition();
 })
+
+//selectors
+const themeCheckbox = document.querySelector(".checkbox");
+
+//state
+const theme = localStorage.getItem('theme');
+
+//on mount
+theme && document.body.classList.add(theme);
+
+//handlers
+handleThemeCheckBox = () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+    }
+    else {
+        localStorage.removeItem('theme');
+    }
+};
+
+//events
+themeCheckbox.addEventListener('click', handleThemeCheckBox);
+
+
